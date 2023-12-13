@@ -41,7 +41,7 @@ CKEDITOR.stylesSet.add( 'default', [
 		styles: {
 			padding: '5px 10px',
 			background: '#eee',
-			border: '1px solid #ccc'
+			border: '1px solid var(--saphire)'
 		}
 	},
 
@@ -100,7 +100,7 @@ CKEDITOR.stylesSet.add( 'default', [
 			cellpadding: '5',
 			cellspacing: '0',
 			border: '1',
-			bordercolor: '#ccc'
+			bordercolor: 'var(--saphire)'
 		},
 		styles: {
 			'border-collapse': 'collapse'
