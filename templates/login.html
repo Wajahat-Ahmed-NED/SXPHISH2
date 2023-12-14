@@ -113,8 +113,8 @@
                 <form class="form-signin" action="" method="POST">
                     <h4><b>PLEASE LOG IN ...</b></h4>
                     {{template "flashes" .Flashes}}
-                    <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
-                    <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required>
+                    <input type="text" name="username" class="form-control" placeholder="Username" required autofocus style="border: 1px solid black;">
+                    <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required style="border: 1px solid black;">
                     <input type="hidden" name="csrf_token" value="{{.Token}}" />
                     <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
                 </form>
