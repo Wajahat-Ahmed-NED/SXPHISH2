@@ -1,6 +1,6 @@
 {{ define "base" }}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="theme-toggle">
-                    <img src="/images/moon_icon.png" id="theme-icon" width="36px" height="36px"/>
+                    <img src="/images/moon_icon.png" id="theme-icon"  data-theme-toggle  width="36px" height="36px"/>
                 </div>
                 <img class="navbar-logo" src="/images/SXPHISH2.png" width="10%"/>
             </div>
@@ -66,19 +66,45 @@
     {{template "nav" .}}
     {{template "body" .}}
     <!-- Placed at the end of the document so the pages load faster -->
-    <script>
-        var icon = document.getElementById("theme-icon");
-        icon.onclick = function(){
-            document.body.classList.toggle("dark-theme");
-            if(document.body.classList.contains("dark-theme")){
-                icon.src = "images/sun_icon.png";
-            }else{
-                icon.src = "images/moon_icon.png";
-            }
-        }
-    </script>
     <script src="/js/dist/vendor.min.js"></script>
     <script src="/js/dist/app/gophish.min.js"></script>
+    <script>
+        function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+            if (localStorageTheme !== null) {
+                return localStorageTheme;
+            }
+            if (systemSettingDark.matches) {
+                return "dark";
+            }
+            return "light";
+        }
+        function updateImage({ imgElement, isDark }) {
+            const newSrc = isDark ? "images/sun_icon.png" : "images/moon_icon.png";
+            imgElement.src = newSrc;
+            imgElement.alt = `Change to ${isDark ? "light" : "dark"} theme`;
+        }
+        function updateThemeOnHtmlEl({ theme }) {
+        document.querySelector("html").setAttribute("data-theme", theme);
+        }
+        //ON PAGE LOAD:
+        //Grab what we need from the DOM and system settings on page load
+        const button = document.querySelector("[data-theme-toggle]");
+        const localStorageTheme = localStorage.getItem("theme");
+        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+        //Work out the current site settings
+        let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+        //Update the theme setting and button text accoridng to current settings
+        updateImage({ imgElement: button, isDark: currentThemeSetting === "dark" });
+        updateThemeOnHtmlEl({ theme: currentThemeSetting });
+        //Add an event listener to toggle the theme
+        button.addEventListener("click", (event) => {
+        const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
+        updateImage({ imgElement: button, isDark: newTheme === "dark" });
+        updateThemeOnHtmlEl({ theme: newTheme });
+        currentThemeSetting = newTheme;
+        }); 
+    </script>
     {{template "scripts" .}}
 </body>
 

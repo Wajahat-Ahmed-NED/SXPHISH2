@@ -3,7 +3,7 @@
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */ /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
- :root {
+ [data-theme="light"] {
 --emerald: #283f50;
 --saphire: #ddd;
 --blue-primary: #337ab7;
@@ -17,6 +17,8 @@
 --whitetrans: #eee;
 --message-header: #595959;
 --message-body: #545454;
+--dd-menu-bg: #fff;
+--dd-menu-fg: #283f50;
 --light: #201e1c;
 --lighter: #555;
 --deep: #f9f9f9;
@@ -32,7 +34,7 @@
 --btn-warning-fg: #fff;
 --btn-warning-bdr: #f1c40f;
 }
-.dark-theme {
+[data-theme="dark"] {
 --emerald: #00ffb7;
 --saphire: #43ffff;
 --blue-primary: #43ffff;
@@ -46,6 +48,8 @@
 --chart-label-text: #b5b5b5;
 --message-header: #b5b5b5;
 --message-body: #b8b8b8;
+--dd-menu-bg: #103a51;
+--dd-menu-fg: #b5b5b5;
 --light: #aaa;
 --lighter: #aaa;
 --deep: #103a51;
@@ -3691,7 +3695,8 @@ margin: 2px 0 0;
 font-size: 14px;
 text-align: left;
 list-style: none;
-background-color: var(--deepest);
+background-color: var(--dd-menu-bg);
+color: var(--dd-menu-fg);
 -webkit-background-clip: padding-box;
 background-clip: padding-box;
 border: 1px solid var(--saphire);
@@ -3716,7 +3721,7 @@ padding: 3px 20px;
 clear: both;
 font-weight: 400;
 line-height: 1.42857143;
-color: #333;
+color: inherit;
 white-space: nowrap;
 }
 .dropdown-menu > li > a:focus,
