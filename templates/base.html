@@ -79,7 +79,7 @@
             return "light";
         }
         function updateImage({ imgElement, isDark }) {
-            const newSrc = isDark ? "images/sun_icon.png" : "images/moon_icon.png";
+            const newSrc = isDark ? "/images/sun_icon.png" : "/images/moon_icon.png";
             imgElement.src = newSrc;
             imgElement.alt = `Change to ${isDark ? "light" : "dark"} theme`;
         }
@@ -94,8 +94,8 @@
         //Work out the current site settings
         let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
         //Update the theme setting and button text accoridng to current settings
-        updateImage({ imgElement: button, isDark: currentThemeSetting === "dark" });
         updateThemeOnHtmlEl({ theme: currentThemeSetting });
+        updateImage({ imgElement: button, isDark: currentThemeSetting === "dark" });
         //Add an event listener to toggle the theme
         button.addEventListener("click", (event) => {
         const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
