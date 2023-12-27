@@ -313,6 +313,11 @@
   .navbar {
     display: none;
   }
+  .navbar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -2098,7 +2103,7 @@
     width: 91.66666667%;
   }
   .col-md-10 {
-    width: 83.33333333%;
+    width: 100%;
   }
   .col-md-9 {
     width: 75%;
@@ -2236,7 +2241,7 @@
     margin-left: 25%;
   }
   .col-md-offset-2 {
-    margin-left: 16.66666667%;
+    margin: 0 auto;
   }
   .col-md-offset-1 {
     margin-left: 8.33333333%;
@@ -7547,6 +7552,11 @@
   #resultsMap {
   margin-top: -30px;
   }
+  .navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   @media (min-width: 768px) and (max-width: 1300px) {
   .navbar-collapse.collapse {
     display: none !important;
@@ -7775,7 +7785,9 @@
   background-color: #37485a;
   }
   .nav-badge {
-  margin-top: 5px;
+  margin: 3px;
+  font-size: x-small;
+  align-self: baseline;
   }
   #resultsMapContainer {
   display: none;
@@ -18965,4 +18977,70 @@
   .form-inline .select2-container--bootstrap {
   display: inline-block;
   }
-  
+  .main-header {
+    /* Add styling for your main header if needed */
+}
+
+.sub-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    background-color: var(--navbar-color); /* Add your background color */
+    padding: 10px; /* Add padding as needed */
+}
+
+.sub-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sub-navbar li {
+    margin-right: 10px; /* Adjust as needed */
+    font-size: small;
+}
+
+.sub-navbar a {
+    text-decoration: none;
+    color: white; /* Set your text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border-radius: 5px; /* Add border-radius for rounded corners if desired */
+}
+
+.sub-navbar a:hover,
+.sub-navbar a:focus,
+.sub-navbar a:active {
+  color: var(--deeper);
+  background-color: var(--emerald);
+}
+
+
+
+/* CSS for styling the bar charts */
+.bar-charts-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bar {
+  height: 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chart-title {
+  font-weight: bold;
+}
+
+.chart-value {
+  margin-left: auto;
+}
