@@ -4161,7 +4161,8 @@
   .nav > li > a:focus,
   .nav > li > a:hover {
   text-decoration: none;
-  background-color: #eee;
+  color: #0e3246;
+  background-color: var(--saphire);
   }
   .nav > li.disabled > a {
   color: #777;
@@ -19043,4 +19044,8 @@
 
 .chart-value {
   margin-left: auto;
+}
+#mapchartdiv {
+  width: 100%;
+  height: 500px;
 }
