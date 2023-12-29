@@ -26,6 +26,21 @@
                     </li>
                 </ul>
             </div>
+            <div class="btn-group">
+                <button type="button" id="exportButton2" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-file-pdf-o"></i> Export PDF
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="exportButton2">
+                    <li>
+                        <a href="#" onclick="exportAsPDF('results')">Results</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="exportAsPDF('events')">Raw Events</a>
+                    </li>
+                </ul>
+            </div>
             <button id="complete_button" type="button" class="btn btn-blue" data-toggle="tooltip" onclick="completeCampaign()">
                 <i class="fa fa-flag-checkered"></i> Complete
             </button>
@@ -155,6 +170,10 @@
     <div id="flashes" class="row"></div>
 </div>
 {{end}} {{define "scripts"}}
+<!-- Include pdfmake from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
 <script src="/js/dist/app/campaign_results.min.js"></script>
 <script src="/js/dist/app/map.min.js"></script>
 {{end}}
