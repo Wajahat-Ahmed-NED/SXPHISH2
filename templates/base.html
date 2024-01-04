@@ -26,6 +26,8 @@
         var csrf_token = {{.Token}}
     {{end}}
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
      <style>
         #map { /* Set map container size */
       height: 400px;
@@ -110,7 +112,10 @@
         updateThemeOnHtmlEl({ theme: newTheme });
         currentThemeSetting = newTheme;
         }); 
+        
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
     {{template "scripts" .}}
 </body>
 
