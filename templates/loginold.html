@@ -1,0 +1,137 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gophish - Open-Source Phishing Toolkit">
+    <meta name="author" content="Jordan Wright (http://github.com/jordan-wright)">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>SXPHISH - {{ .Title }}</title>
+
+    <link href="/css/dist/gophish.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+    <style>
+        #map { /* Set map container size */
+      height: 400px;
+    }
+        h4 {
+            color: #00ffb7;
+        }
+
+        .id {
+            color: #00ffb7;
+        }
+
+        body,
+        html {
+            height:100%;
+            margin: 0;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* height: 300vh; */
+            /* height:100 */
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height:100vh;
+            /* max-width: 1200px; */
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+            /* padding: 20px; */
+            /* object-fit: contain; */
+        }
+
+        .login-section {
+            flex: 1;
+            padding: 20px;
+            max-width: 400px;
+        }
+
+        .form-signin {
+            text-align: center;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background-color: #00ffb7;
+            border-color: #00ffb7;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-section,
+            .login-section {
+                width: 100%;
+                max-width: none;
+                text-align: center;
+                padding: 10px;
+            }
+
+        }
+        .navbar-logo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="background-color:#042c43">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#032336">
+        <div class="container-fluid d-flex align-items-center">
+            <div class="navbar-header">
+                <img class="navbar-logo" src="/images/SXPHISH2.png" width="10%" />
+            </div>
+        </div>
+    </div>
+    <div class="container" style="width: 100%; " >
+        <div class="content-wrapper" style="width: 100% !important;  border:'1px solid white';">
+            <div class="image-section" >
+                <!-- Place your image here -->
+                <img src="/images/login_image.jpg" alt="We Can Upload Image Here" style="width: 100%; height: 100%; color: white;" />
+            </div>
+            <div class="login-section" >
+                <form class="form-signin" action="" method="POST">
+                    <h4><b>PLEASE LOG IN ...</b></h4>
+                    {{template "flashes" .Flashes}}
+                    <input type="text" name="username" class="form-control" placeholder="Username" required autofocus style="border: 1px solid rgb(255, 255, 255);color: white;">
+                    <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required style="border: 1px solid rgb(255, 255, 255);color: white;">
+                    <input type="hidden" name="csrf_token" value="{{.Token}}" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
+                </form>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 10%;">Copyright SXPHISH@ 2023</p>
+    </div>
+    <script src="/js/dist/vendor.min.js"></script>
+</body>
+
+</html>
+{{ end }}

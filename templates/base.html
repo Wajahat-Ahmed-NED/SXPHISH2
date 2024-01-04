@@ -88,11 +88,13 @@
         }
         function updateImage({ imgElement, isDark }) {
             const newSrc = isDark ? "/images/sun_icon.png" : "/images/moon_icon.png";
+           
             imgElement.src = newSrc;
             imgElement.alt = `Change to ${isDark ? "light" : "dark"} theme`;
         }
         function updateThemeOnHtmlEl({ theme }) {
         document.querySelector("html").setAttribute("data-theme", theme);
+             
         }
         //ON PAGE LOAD:
         //Grab what we need from the DOM and system settings on page load
@@ -111,6 +113,8 @@
         updateImage({ imgElement: button, isDark: newTheme === "dark" });
         updateThemeOnHtmlEl({ theme: newTheme });
         currentThemeSetting = newTheme;
+        // document.getElementsByClassName("sub-navbar").style.backgroundColor=newTheme === "dark"?'white !important':'yellow !important'
+       
         }); 
         
     </script>
