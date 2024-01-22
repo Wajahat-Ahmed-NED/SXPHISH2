@@ -31,7 +31,7 @@
                 <!-- sent email -->
                 <div class="col-lg-2 col-md-2">
                     <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                        <i style="color: #1abc9c; font-size: 22px;"  class="fa fa-envelope-o"></i>
+                        <img src="/images/Email_Sent.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                         <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Sent</p>
                     </div>
                     <h6 class="my-2 pt-1" id="sentVal">0</h6>
@@ -42,7 +42,7 @@
                 <!-- opened email -->
                 <div class="col-lg-2 col-md-2">
                     <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                        <i style="color: #f9bf3b; font-size: 22px;"  class="fa fa-envelope-open"></i>
+                        <img src="/images/Email_Opened.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                         <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Opened</p>
                     </div>
                     <h6 class="my-2 pt-1" id="openedVal">45</h6>
@@ -53,7 +53,7 @@
                 <!-- clicked email -->
                 <div class="col-lg-2 col-md-2">
                     <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                        <i style="color: #F39C12; font-size: 22px;"  class="fa fa-mouse-pointer"></i>
+                        <img src="/images/Clicked_Link.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                         <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Clicked Link</p>
                     </div>
                     <h6 class="my-2 pt-1"  id="clickedVal">20</h6>
@@ -64,7 +64,7 @@
                 <!-- submitted email -->
                 <div class="col-lg-2 col-md-2">
                     <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                        <i style="color: #f05b4f; font-size: 22px;"  class="fa fa-exclamation"></i>
+                        <img src="/images/Submitted_Data.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                         <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Submitted Data</p>
                     </div>
                     <h6 class="my-2 pt-1" id="submitted_dataVal">10</h6>
@@ -75,7 +75,7 @@
                 <!-- reported email -->
                 <div class="col-lg-2 col-md-2">
                     <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                        <i style="color: #45d6ef; font-size: 22px;"  class="fa fa-bullhorn"></i>
+                        <img src="/images/Email_Reported.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                         <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Reported</p>
                     </div>
                     <h6 class="my-2 pt-1" id="email_reportedVal">0</h6>
@@ -108,19 +108,22 @@
                         <th class="col-md-2 col-sm-2">Name</th>
                         <th class="col-md-2 col-sm-2">Created Date</th>
                         <th class="col-md-1 col-sm-1">
-                            <i class="fa fa-envelope-o"></i>
+                            <img src="/images/Email_Sent.png" alt="Icon" style="width: 20px; height: 20px; color: #1abc9c;">
+
                         </th>
                         <th class="col-md-1 col-sm-1">
-                            <i class="fa fa-envelope-open-o"></i>
+                            <img src="/images/Email_Opened.png" alt="Icon" style="width: 20px; height: 20px; color: #1abc9c;">
+
                         </th>
                         <th class="col-md-1 col-sm-1">
-                            <i class="fa fa-mouse-pointer"></i>
+                            <img src="/images/Clicked_Link.png" alt="Icon" style="width: 20px; height: 20px; color: #1abc9c;">
+
                         </th>
                         <th class="col-md-1 col-sm-1">
-                            <i class="fa fa-exclamation-circle"></i>
+                            <img src="/images/Submitted_Data.png" alt="Icon" style="width: 20px; height: 20px; color: #1abc9c;">
                         </th>
                         <th class="col-md-1 col-sm-1">
-                            <i class="fa fa-bullhorn"></i>
+                            <img src="/images/Email_Reported.png" alt="Icon" style="width: 20px; height: 20px; color: #1abc9c;">
                         </th>
                         <th class="col-md-1 col-sm-1">Status</th>
                         <th class="col-md-2 col-sm-2 no-sort"></th>
@@ -131,10 +134,11 @@
             </table>
         </div>
     </div>
-    <p style="text-align: center;">Copyright SXPHISH@ 2023</p>
+    <p style="text-align: center;">Copyright SXPHISH@ <span id="currentYear"></span></p>
 </div>
 {{end}} {{define "scripts"}}
 <script src="/js/dist/app/dashboard.min.js"></script>
+<script src="/js/dist/app/date.min.js"></script>
 
     <!-- Resources -->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>

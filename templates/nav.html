@@ -1,54 +1,46 @@
 {{define "nav"}}
+
+<style>
+    .nav-sub a {
+        font-weight: bold; /* This makes the text bold */
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
         
 <div class="sub-navbar">
-    <ul class="nav nav-sub" style="font-size: 26px !important;">
+    <ul class="nav nav-sub">
         <li>
-            <a href="/"><b>Dashboard</b></a>
+            <a href="/">DASHBOARD</a>
         </li>
         <li>
-            <a href="/campaigns"><b>Campaigns</b></a>
+            <a href="/campaigns">CAMPAIGNS</a>
         </li>
         <li>
-            <a href="/groups"><b>Users &amp; Groups</b></a>
+            <a href="/groups">USERS MANAGEMENT</a>
         </li>
         <li>
-            <a href="/templates"><b>Email Templates</b></a>
+            <a href="/templates">EMAIL PHISHING</a>
         </li>
         <li>
-            <a href="/landing_pages"><b>Landing Pages</b></a>
+            <a href="/landing_pages">PHISHING PAGES</a>
         </li>
         <li>
-            <a href="/sending_profiles"><b>Sending Profiles</b></a>
+            <a href="/sending_profiles">SENDING PROFILES</a>
         </li>
         <li>
-            <a href="/settings"><b>Account Settings</span></b></a>
+            <a href="/settings">ACCOUNT SETTINGS</span></a>
         </li>
         {{if .ModifySystem}}
-        <!-- <li>
-            <a href="/users">User Management<span class="nav-badge badge pull-right">Admin</span></a>
+        <li>
+            <a href="/users">ADMIN MANAGEMENT<span class="nav-badge badge pull-right"></span></a>
         </li>
         <li>
-            <a href="/webhooks">Webhooks<span class="nav-badge badge pull-right">Admin</span></a>
-        </li> -->
+            <a href="/webhooks">WEBHOOKS<span class="nav-badge badge pull-right"></span></a>
+        </li>
         {{end}}
-        <li>
-            <hr>
-        </li>
-        <!-- <li>
-            <a href="https://docs.getgophish.com/user-guide/">User Guide</a>
-        </li>
-        <li>
-            <a href="https://docs.getgophish.com/api-documentation/">API Documentation</a>
-        </li> -->
     </ul>
 </div>
     </div>
 </div>
-<script>
-    let theme=localStorage.getItem("theme")
-    document.getElementsByClassName("sub-navbar").style.backgroundColor=newTheme === "dark"?'white':'yellow'
-       
-</script>
 {{end}}

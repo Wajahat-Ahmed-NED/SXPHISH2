@@ -15,33 +15,19 @@
     <div id="loading">
         <i class="fa fa-spinner fa-spin fa-4x"></i>
     </div>
+
     <div id="emptyMessage" class="row" style="display:none;">
         <div class="alert alert-info">
             No groups created yet. Let's create one!
         </div>
     </div>
-    <div class="row">
-        <table id="groupTable" class="table" style="display:none;">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th># of Members</th>
-                    <th>Modified Date</th>
-                    <th class="col-md-2 no-sort"></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    <p style="text-align: center;">Copyright SXPHISH@ 2023</p>
-</div>
+
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<div  id="modalCampaign" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="dismiss()">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title" id="groupModalLabel">New Group</h4>
@@ -96,13 +82,45 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="dismiss()">Close</button>
                 <button type="button" class="btn btn-primary" id="modalSubmit">Save changes</button>
             </div>
         </div>
     </div>
   
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <table id="groupTable" class="table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th># of Members</th>
+                    <th>Modified Date</th>
+                    <th class="col-md-2 no-sort"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <p style="text-align: center;">Copyright SXPHISH@ <span id="currentYear"></span></p>
+</div>
+
 {{end}} {{define "scripts"}}
 <script src="/js/dist/app/groups.min.js"></script>
+<script src="/js/dist/app/date.min.js"></script>
+
+
 {{end}}

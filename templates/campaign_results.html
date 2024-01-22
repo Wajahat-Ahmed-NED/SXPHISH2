@@ -36,9 +36,9 @@
                     <li >
                         <a href="#" onclick="exportAsPDF('results')">Results</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#" onclick="exportAsPDF('events')">Raw Events</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <button id="complete_button" type="button" class="btn btn-blue" data-toggle="tooltip" onclick="completeCampaign()">
@@ -74,7 +74,7 @@
                         <!-- sent email -->
                         <div class="col-lg-2 col-md-2"id="cardsForPDF1">
                             <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                                <i style="color: #1abc9c; font-size: 22px;"  class="fa fa-envelope-o"></i>
+                                <img src="/images/Email_Sent.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                                 <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Sent</p>
                             </div>
                             <h6 class="my-2 pt-1" id="sentVal">65</h6>
@@ -85,7 +85,7 @@
                         <!-- opened email -->
                         <div class="col-lg-2 col-md-2" id="cardsForPDF2">
                             <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                                <i style="color: #f9bf3b; font-size: 22px;"  class="fa fa-envelope-open"></i>
+                                <img src="/images/Email_Opened.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                                 <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Opened</p>
                             </div>
                             <h6 class="my-2 pt-1" id="openedVal">45</h6>
@@ -96,7 +96,7 @@
                         <!-- clicked email -->
                         <div class="col-lg-2 col-md-2" id="cardsForPDF3">
                             <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                                <i style="color: #F39C12; font-size: 22px;"  class="fa fa-mouse-pointer"></i>
+                                <img src="/images/Clicked_Link.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;">
                                 <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Clicked Link</p>
                             </div>
                             <h6 class="my-2 pt-1" id="clickedVal">20</h6>
@@ -107,7 +107,7 @@
                         <!-- submitted email -->
                         <div class="col-lg-2 col-md-2" id="cardsForPDF4">
                             <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                                <i style="color: #f05b4f; font-size: 22px;"  class="fa fa-exclamation"></i>
+                                <img src="/images/Submitted_Data.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;"> 
                                 <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Submitted Data</p>
                             </div>
                             <h6 class="my-2 pt-1" id="submitted_dataVal">10</h6>
@@ -118,7 +118,7 @@
                         <!-- reported email -->
                         <div class="col-lg-2 col-md-2" id="cardsForPDF5">
                             <div style="display: flex; justify-content: start; align-items: center; gap: 8px;">
-                                <i style="color: #45d6ef; font-size: 22px;"  class="fa fa-bullhorn"></i>
+                                <img src="/images/Email_Reported.png" alt="Icon" style="width: 30px; height: 30px; color: #1abc9c;"> 
                                 <p style="color: var(--chart-label-text); font-size: 24px; font-weight: 300; margin-bottom: 0;">Email Reported</p>
                             </div>
                             <h6 class="my-2 pt-1" id="email_reportedVal">0</h6>
@@ -133,10 +133,10 @@
                         <div id="timeline_chart"></div>
                     </div>
                 </div>
-                <div class="row" id="resultsMapContainer" style="display: flex; justify-content: center;" >
+                <div class="row" id="resultsMapContainer" style="display: flex; justify-content: center; " >
                     <div class="col-md-6" id="cardsForPDF6">
                         <p style="text-align:center;">Targets Map</p>
-                        <div id="resultsMap" ></div>
+                        <div id="resultsMap"></div>
                         <!-- <object data="worldmap.eps" type="image/eps">
                             Your browser does not support EPS files.
                           </object>
@@ -169,10 +169,12 @@
         </div>
     </div>
     <div id="flashes" class="row"></div>
-    <p style="text-align: center;">Copyright SXPHISH@ 2023</p>
+    <p style="text-align: center;">Copyright SXPHISH@ <span id="currentYear"></span></p>
 </div>
 {{end}} {{define "scripts"}}
 <!-- Include pdfmake from CDN -->
+<script src="/js/dist/app/date.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>

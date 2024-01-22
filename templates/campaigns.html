@@ -13,70 +13,10 @@
     </div>
     &nbsp;
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="active" role="activeCampaigns"><a href="#activeCampaigns" aria-controls="activeCampaigns" role="tab"
-                data-toggle="tab">Active Campaigns</a></li>
-        <li role="archivedCampaigns"><a href="#archivedCampaigns" aria-controls="archivedCampaigns" role="tab"
-                data-toggle="tab">Archived Campaigns</a></li>
-    </ul>
-    </br>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="activeCampaigns">
-            <div id="flashes" class="row"></div>
-            &nbsp;
-            <div id="loading">
-                <i class="fa fa-spinner fa-spin fa-4x"></i>
-            </div>
-            <div id="emptyMessage" class="row" style="display:none;">
-                <div class="alert alert-info">
-                    No campaigns created yet. Let's create one!
-                </div>
-            </div>
-            <div class="row">
-                <table id="campaignTable" class="table" style="display:none;">
-                    <thead>
-                        <tr>
-                            <th class="col-md-3">Name</th>
-                            <th class="col-md-4">Created Date</th>
-                            <th class="col-md-2">Status</th>
-                            <th class="col-md-3 no-sort"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="archivedCampaigns">
-            </br>
-            <div id="emptyMessage" class="row" style="display:none;">
-                </br>
-                <div class="alert alert-info">
-                    No archived campaigns.
-                </div>
-            </div>
-            <div class="row">
-                <table id="campaignTableArchive" class="table" style="display:none;">
-                    <thead>
-                        <tr>
-                            <th class="col-md-3">Name</th>
-                            <th class="col-md-4">Created Date</th>
-                            <th class="col-md-2">Status</th>
-                            <th class="col-md-3 no-sort"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <p style="text-align: center;">Copyright SXPHISH@ 2023</p>
-</div>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div  id="modalCampaign" style="display: none; ">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" >
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="dismiss()">
                     <span aria-hidden="true">&times;</span>
@@ -135,8 +75,70 @@
         </div>
     </div>
 </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active" role="activeCampaigns"><a href="#activeCampaigns" aria-controls="activeCampaigns" role="tab"
+                data-toggle="tab">Active Campaigns</a></li>
+        <li role="archivedCampaigns"><a href="#archivedCampaigns" aria-controls="archivedCampaigns" role="tab"
+                data-toggle="tab">Archived Campaigns</a></li>
+    </ul>
+    </br>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="activeCampaigns">
+            <div id="flashes" class="row"></div>
+            &nbsp;
+            <div id="loading">
+                <i class="fa fa-spinner fa-spin fa-4x"></i>
+            </div>
+            <div id="emptyMessage" class="row" style="display:none;">
+                <div class="alert alert-info">
+                    No campaigns created yet. Let's create one!
+                </div>
+            </div>
+            <div class="row">
+                <table id="campaignTable" class="table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3">Name</th>
+                            <th class="col-md-4">Created Date</th>
+                            <th class="col-md-2">Status</th>
+                            <th class="col-md-3 no-sort"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="archivedCampaigns">
+            </br>
+            <div id="emptyMessage" class="row" style="display:none;">
+                </br>
+                <div class="alert alert-info">
+                    No archived campaigns.
+                </div>
+            </div>
+            <div class="row">
+                <table id="campaignTableArchive" class="table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3">Name</th>
+                            <th class="col-md-4">Created Date</th>
+                            <th class="col-md-2">Status</th>
+                            <th class="col-md-3 no-sort"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center;">Copyright SXPHISH@ <span id="currentYear"></span></p>
+</div>
+
 <!-- Send Test Email Modal -->
-<div class="modal" id="sendTestEmailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<div class="modal" id="sendTestEmailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- New Email Modal -->
@@ -178,4 +180,6 @@
 </div>
 {{end}} {{define "scripts"}}
 <script src="/js/dist/app/campaigns.min.js"></script>
+<script src="/js/dist/app/date.min.js"></script>
+
 {{end}}

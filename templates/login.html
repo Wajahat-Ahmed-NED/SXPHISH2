@@ -15,7 +15,7 @@
         }
         /* Additional CSS for input frames */
         .form-control {
-            border: 2px solid #ededed; /* Adjust the color and size as needed */
+            border: 1px solid #ededed; /* Adjust the color and size as needed */
             border-radius: 6px; /* Rounded corners */
             padding: 10px;
             margin-bottom: 5px; /* Space between inputs */
@@ -37,10 +37,10 @@
         <form class="form-signin" action="" method="POST">
             <img id="logo" src="/images/logo_purple.png" style="width: 300px; height: 60px; display: block; margin-top: 30px; margin-bottom: 50px; margin-left: auto; margin-right: auto;">
             {{template "flashes" .Flashes}}
-            <input type="text" name="username" class="form-control top-input" placeholder="Username" required autofocus style="border-color: #00ffb7;">
-            <input type="password" name="password" class="form-control bottom-input" placeholder="Password" required style="border-color: #00ffb7;">
+            <input type="text" name="username" class="form-control top-input" placeholder="Username" required autofocus style="border-color: #eeeeee;">
+            <input type="password" name="password" class="form-control bottom-input" placeholder="Password" required style="border-color: #eeeeee;">
             <input type="hidden" name="csrf_token" value="{{.Token}}">
-            <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #00ffb7;">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #eeeeee;">Sign in</button>
         </form>
     </div>
     <script src="/js/dist/vendor.min.js"></script>

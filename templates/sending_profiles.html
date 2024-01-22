@@ -17,25 +17,9 @@
             No profiles created yet. Let's create one!
         </div>
     </div>
-    <div class="row">
-        <table id="profileTable" class="table" style="display:none;">
-            <thead>
-                <tr>
-                    <th class="col-md-4">Name</th>
-                    <th>Interface Type</th>
-                    <th>Last Modified Date</th>
-                    <th class="col-md-2 no-sort"></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    
-    <p style="text-align: center;">Copyright SXPHISH@ 2023</p>
-</div>
+
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<div id="modalCampaign"style="display:none">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- New Template Modal -->
@@ -103,6 +87,26 @@
         </div>
     </div>
 </div>
+
+
+    <div class="row">
+        <table id="profileTable" class="table" style="display:none;">
+            <thead>
+                <tr>
+                    <th class="col-md-4">Name</th>
+                    <th>Interface Type</th>
+                    <th>Last Modified Date</th>
+                    <th class="col-md-2 no-sort"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <p style="text-align: center;">Copyright SXPHISH@ <span id="currentYear"></span></p>
+</div>
+
 <!-- Send Test Email Modal -->
 <div class="modal" id="sendTestEmailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
     <div class="modal-dialog" role="document">
@@ -143,4 +147,6 @@
 </div>
 {{end}} {{define "scripts"}}
 <script src="/js/dist/app/sending_profiles.min.js"></script>
+<script src="/js/dist/app/date.min.js"></script>
+
 {{end}}
